@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+<br>
+<h1>Profile</h1>
+
+    {% block head %}
+      <title>Profile</title>
+    {% endblock %}
+
+    {% block body %}
+    <div class="container">
+      <h1>Profile</h1>
+      <p>User Name: {{user}}</p>
+        <p>First Name: {{user.first_name}}</p>
+        <p>Last Name: {{user.last_name}}</p>
+        <p>Email: {{user.email}}</p>
+        <p>Kills: {{user.userprofile.wins}}</p>
+        <a class="btn btn-secondary" href="/account/profile/edit">Edit Profile</a>
+    </div>
+
+    {% endblock %}

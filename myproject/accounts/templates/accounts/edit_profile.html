@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+<br>
+<h1>Profile</h1>
+{% load static %}
+    {% block head %}
+      <link rel="stylesheet" href="{% static 'accounts/css/edit_profile_style.css' %}" type="text/css" >
+      <title>Edit Profile</title>
+    {% endblock %}
+
+    {% block body %}
+    <div class="container">
+      <h1>Edit Profile</h1>
+      <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <a href="../account/password" class="btn btn-secondary" id = "change-pass-btn">Change Password</a>
+        <br>
+        <br>
+        <br>
+        <button type="submit" class="btn btn-secondary">Submit</button>
+      </form>
+<br>
+
+    </div>
+
+    {% endblock %}

@@ -1,0 +1,12 @@
+#id_password {
+  display: none;
+}
+body > div.container > form > p:nth-child(5) > label{
+  display: none;
+}
+body > div.container > form > span{
+  display: none;
+}
+#change-pass-btn{
+  
+}
