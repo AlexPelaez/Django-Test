@@ -41,7 +41,7 @@ def edit_profile(request):
         form= EditProfileForm(instance=request.user)
         args = {'form': form}
         return render(request, 'accounts/edit_profile.html', args)
-
+@login_required
 def change_password(request):
     if request.method == 'POST':
         form = EditPasswordForm(data=request.POST, user=request.user)
