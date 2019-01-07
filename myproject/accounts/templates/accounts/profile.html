@@ -1,25 +1,36 @@
 {% extends 'base.html' %}
 <br>
 <h1>Profile</h1>
-
+{% load static %}
     {% block head %}
+      <link rel="stylesheet" href="{% static 'accounts/css/profile_style.css' %}" type="text/css" >
       <title>Profile</title>
     {% endblock %}
 
     {% block body %}
+<br>
+
+
 
     <div class="container">
-      <h1>Profile</h1>
-      <img src="{{ user.userprofile.image.url }}" class="rounded-circle" width="100" height="100">
-      <br>
-      <br>
-      <p>User Name: {{user}}</p>
-        <p>First Name: {{user.first_name}}</p>
-        <p>Last Name: {{user.last_name}}</p>
-        <p>Email: {{user.email}}</p>
-        <p>Kills: {{user.userprofile.wins}}</p>
-        <a class="btn btn-secondary" href="/account/profile/edit">Edit Profile</a>
-    </div>
-    
+      <div class="card-deck mb-3 text-center">
+        <div class="card mb-4 shadow-sm">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">Profile</h4>
+          </div>
+          <div class="card-body">
+            <img src="{{ user.userprofile.image.url }}" class="rounded-circle" width="100" height="100">
+            <h1 class="card-title pricing-card-title"><small>{{user}}</small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Name: {{user.first_name}} {{user.last_name}}</li>
+              <li>Email: {{user.email}}</li>
+              <li>Kills: {{user.userprofile.wins}}</li>
+            </ul>
+            <a  class="btn btn-outline-primary" href="{% url 'profile_edit' %}" >Edit Profile</a>
+            <br>
+
+          </div>
+      
+
 
     {% endblock %}
