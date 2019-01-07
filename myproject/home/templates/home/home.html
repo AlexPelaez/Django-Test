@@ -3,5 +3,10 @@
 {% block body %}
 
   <h1>home page!!!!!!</h1>
-
+  <form method="post">
+  	{% csrf_token %}
+  	
+  	
+  	<button type="submit" class="btn">Submit</button>
+  </form>
 {% endblock %}
