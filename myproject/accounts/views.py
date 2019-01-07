@@ -6,12 +6,6 @@ from django.contrib.auth.forms import UserChangeForm, PasswordChangeForm
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.decorators import login_required
 # Create your views here.
-def home(request):
-    numbers = [1,2,3,4,5]
-    name = 'Alex Pelaez'
-
-    args = {'myName' : name, 'numbers': numbers}
-    return render(request, 'accounts/home.html', args)
 
 
 def register(request):

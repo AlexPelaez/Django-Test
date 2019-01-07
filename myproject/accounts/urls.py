@@ -5,7 +5,7 @@ from django.urls import path, re_path
 from django.contrib.auth.views import LoginView, LogoutView, PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView, PasswordResetCompleteView
 from . import views
 urlpatterns = [
-    url(r'^$', views.home),
+    
     path('login/', LoginView.as_view(template_name='accounts/login_register.html'), name="login_view"),
     path('logout/', LogoutView.as_view(template_name='accounts/logout.html'), name="logout"),
     url(r'register/$', views.register, name='register'),
