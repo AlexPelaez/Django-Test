@@ -1,7 +1,7 @@
 from django.conf.urls import url
 
 from django.urls import path, re_path
-
+from django.views.generic.base import RedirectView
 from django.contrib.auth.views import LoginView, LogoutView, PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView, PasswordResetCompleteView
 from . import views
 urlpatterns = [
@@ -16,4 +16,5 @@ urlpatterns = [
     url(r'^reset-password/done/$', PasswordResetDoneView.as_view (template_name='reset_password_done')),
     url(r'^reset-password/confirm/(?P<uidb64>[0-9A-Za-z]+)-(?P<token>.+)/$', PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
     url(r'^reset-password/complete/$', PasswordResetCompleteView.as_view (template_name='reset_password_complete')),
+    url(r'^.*$', RedirectView.as_view(url='/home/', permanent=False), name='index')
 ]
