@@ -7,7 +7,7 @@
   	{% csrf_token %}
   	{{ form.as_p }}
   	<button type="submit" class="btn">Submit</button>
-    {% for post in posts %}
+    {% for post in posts reversed %}
 
     <h1>{{ post.post }}</h1>
     <p>Posted By: {{ post.user.get_full_name}} on {{ post.created }}</p>
