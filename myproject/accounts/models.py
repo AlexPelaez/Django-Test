@@ -3,8 +3,10 @@ from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 # Create your models here.
 class UserProfile(models.Model):
+
     user = models.OneToOneField(User, on_delete=models.PROTECT)
     description = models.CharField(max_length=100, default='')
+
     city = models.CharField(max_length=100, default='')
     wins = models.IntegerField(default=0)
     image = models.ImageField(upload_to='profile_image', blank=True)
