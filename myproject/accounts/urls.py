@@ -10,6 +10,7 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(template_name='accounts/logout.html'), name="logout"),
     url(r'register/$', views.register, name='register'),
     url(r'profile$', views.view_profile, name='view_profile'),
+    url(r'profile/(?P<pk>\d+)/$', views.view_profile, name='view_profile_with_pk'),
     url(r'profile/edit$', views.edit_profile, name='profile_edit'),
     url(r'change-password/$', views.change_password, name='change_password'),
     url(r'^reset-password/$', PasswordResetView.as_view (from_email='reset_password')),

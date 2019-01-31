@@ -8,7 +8,7 @@
 <div class="container">
 
 
-
+<div class="col-md-8">
   <h1>home page!!!!!!</h1>
   <form method="post">
   	{% csrf_token %}
@@ -25,10 +25,20 @@
   <div class="right">
     <p><b>{{ post.user.get_full_name}} </b><br>{{ post.created }}</p>
     </div>
+
     {% endfor %}
 
 
   </form>
-
+</div>
+<div class="col-md-4">
+  <h2>Suggested Freinds</h2>
+  {% for user in users %}
+  <a href="{% url 'view_profile_with_pk' pk=user.pk %}">
+    <h3>{{user.username}}</h3>
+    </a>
+    
+  {% endfor %}
+</div>
   </div>
 {% endblock %}
