@@ -1,0 +1,11 @@
+WEST = 'NAW'
+EAST = 'NAE'
+SERVER_CHOICES = (
+    (WEST, 'NAW'),
+    (EAST, 'NAE'),
+)
+server_location = models.CharField(
+    max_length=2,
+    choices=SERVER_CHOICES,
+    default=WEST,
+)

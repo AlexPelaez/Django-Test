@@ -1,0 +1,15 @@
+.left{
+  float: left;
+
+}
+h1{
+  font-size: 14px;
+}
+p {
+  margin-left: 0;
+  font-size: 12px;
+}
+#outer{
+  float: left;
+  margin-left: 15%;
+}
