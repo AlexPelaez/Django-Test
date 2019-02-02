@@ -18,10 +18,10 @@
       {% csrf_token %}
       {{ form.as_p }}
       <button type="submit" class="btn btn-secondary" name="button">Login</button>
-      <a href = "../reset-password" class="btn btn-secondary" name="button">Forgot Password</a>
+      <a href = "{../reset-password}" class="btn btn-secondary" name="button">Forgot Password</a>
     </form>
     <h1>New to this website?</h1>
     <br>
-      <a href = "../account/register" class="btn btn-secondary" name="button">Register</a>
+      <a href = "{% url 'register' %}" class="btn btn-secondary" name="button">Register</a>
     </div>
     {% endblock %}
