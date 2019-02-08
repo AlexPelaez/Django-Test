@@ -2,6 +2,9 @@ from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm, PasswordChangeForm
 
+
+# This is the form that users create an account with
+# @param UserCreationForm : This is the generic django template for user registration.
 class RegistrationForm(UserCreationForm):
     email = forms.EmailField(required=True)
 
@@ -25,6 +28,9 @@ def save(self, commit=True):
     if commit:
         user.save()
 
+# This is the form that users edit there name, email. 
+# This form links to the edit password page.
+# @param UserChangeForm : This is the generic django template for editing the User object.
 class EditProfileForm(UserChangeForm):
 
     class Meta:
@@ -35,6 +41,8 @@ class EditProfileForm(UserChangeForm):
         'email',
         )
 
+# This is the form that users create an account with
+# @param PasswordChangeForm : This is the generic django template for user registration.
 class EditPasswordForm(PasswordChangeForm):
 
     class Meta:

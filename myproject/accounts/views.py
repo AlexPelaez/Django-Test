@@ -5,9 +5,11 @@ from django import forms
 from django.contrib.auth.forms import UserChangeForm, PasswordChangeForm
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.decorators import login_required
-# Create your views here.
 
 
+# View to show the register form
+# @todo Make more in depth register prossess 
+# @param request 
 def register(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
@@ -20,6 +22,13 @@ def register(request):
         args = {'form': form}
         return render(request, 'accounts/reg_form.html', args)
 
+
+# View to show profile. When primary key is passed client is 
+# able to view the profile assosiated with it. 
+# @todo Make seperate views for personal and freinds
+# @todo Upgrade UI design
+# @param request 
+# @param pk : Primary key assosiated to another User object
 @login_required
 def view_profile(request, pk = None):
     if pk:
@@ -28,6 +37,12 @@ def view_profile(request, pk = None):
         user = request.user
     args = {'user': user}
     return render(request, 'accounts/profile.html', args)
+    
+
+# View for users to edit there profile.
+# @todo Make a nice UI and add more feautures
+# @todo Add pictures
+# @param request 
 @login_required
 def edit_profile(request):
     if request.method == 'POST':
@@ -39,6 +54,10 @@ def edit_profile(request):
         form= EditProfileForm(instance=request.user)
         args = {'form': form}
         return render(request, 'accounts/edit_profile.html', args)
+
+
+# View for users to change there password.
+# @param request         
 @login_required
 def change_password(request):
     if request.method == 'POST':
