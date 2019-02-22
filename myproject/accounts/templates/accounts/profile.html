@@ -9,9 +9,6 @@
 
     {% block body %}
 <br>
-
-
-
     <div class="container">
       <div class="card-deck mb-3 text-center">
         <div class="card mb-4 shadow-sm">
@@ -26,7 +23,7 @@
             <ul class="list-unstyled mt-3 mb-4">
               <li>Name: {{user.first_name}} {{user.last_name}}</li>
               <li>Email: {{user.email}}</li>
-              <li>Kills: {{user.userprofile.wins}}</li>
+              <li>Wins: {{user.userprofile.wins}}</li>
             </ul>
             
             <a  class="btn btn-outline-primary" href="{% url 'profile_edit' %}" >Edit Profile</a>

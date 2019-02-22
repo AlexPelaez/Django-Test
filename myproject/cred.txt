@@ -1,0 +1,6 @@
+All credentials needed for development 
+
+Main superuser account:
+Username: Admin
+Password: password
+
